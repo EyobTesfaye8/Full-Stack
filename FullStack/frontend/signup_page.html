@@ -1,0 +1,55 @@
+<head>
+    <style>
+        body{
+            background-color: rgb(248, 248, 248);
+        }
+        div{
+            margin:80px 700px;
+            height: 700px;
+            background-color: white;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .holder{
+            height: 60px;
+            width: 90%;
+            border: solid;
+            border-width:1px;
+            border-radius: 3px;
+            margin:20px;
+        }
+        .holder::placeholder{
+            padding-left:10px;
+            font-size: 15px;
+        }
+        p{
+            font-size: 30px;
+            font-weight: bold;
+            margin:20px 30px;
+        }
+        button{
+            display:block;
+            height: 60px;
+            width: 200px;
+            padding:10px 25px;
+            font-size: 20px;
+            background-color: blue;
+            font-weight: bold;
+            margin: 20px 50px;
+            border:none;
+            cursor: pointer;
+            border-radius: 4px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+         <p>Create Your Account.</p>
+         <input class="holder" placeholder="First Name" type="text">
+         <input class="holder" placeholder="Last Name" type="text">
+         <input class="holder" placeholder="Enter Email" type="text">
+         <button>Sign Up</button>
+    </div>
+</body>
