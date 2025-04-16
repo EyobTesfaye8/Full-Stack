@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static "basestyle.css" %}">
+    </head>
+    <body>
+        <div class="header">
+            <div class="logobox">
+                <img class="logo" src="{% static "logo.jpeg" %}">
+            </div>
+            <div class="home">
+                Home
+            </div>
+            <div class="buttonBox">
+                <button class="signUpButton">Sign up</button>
+                <button class="logInButton">Log in</button>
+            </div>
+        </div>
+        <p>
+
+        </p>
+        <div class="footer">
+            <div class="info">
+                About us<br>
+                What this website works?<br>
+                Who is the CEO?<br>
+                History of the website?<br>
+            </div>
+            <div class="contacts">
+            Contact us using <br>
+            <img class="icons" src="{& static "facebooklogo.png" %}">
+            <img class="icons" src="{% static "instagramlogo.avif" %}">
+            <img class="icons" src="{% static "youtubelogo.png" %}">
+            <div>Email : <em>eyobtesfaye@gmail.com</em></div>
+            </div>
+        </div>
+    </body>
+</html>
