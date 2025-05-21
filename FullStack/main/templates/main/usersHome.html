@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block topic %}
+    {{user.firstName}}
+{% endblock %}
+
+{% block headerButton1 %}
+    <a href="{% url 'home' %}"> <button class="logInButton">log out </button> </a>
+{% endblock %}
+
+{% block headerButton2 %}
+{% endblock %}

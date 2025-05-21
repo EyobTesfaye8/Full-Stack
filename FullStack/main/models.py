@@ -9,3 +9,6 @@ class User(models.Model):
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
+    class Meta:
+        db_table = "User information"
+        db_table_comment = "This is where the information of the users stored."

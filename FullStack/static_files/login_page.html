@@ -1,6 +1,5 @@
-{% load static %}
 <head>
-    <link href ="{% static 'login.css' %}" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
 </head>
 <body>
     <div class="login_box">
@@ -10,6 +9,6 @@
         <p class="intro">Password</p>
         <input class="text_holder" type="text">
         <p class="privacy_holder">By clicking "log in," you agree to our Terms of Use and our Privacy Policy.</p>
-        <a href="{% url 'home' %}"> <button class="logInButton">Log in </button> </a>
+        <button class="logInButton">Log in </button>
     </div>
 </body>
