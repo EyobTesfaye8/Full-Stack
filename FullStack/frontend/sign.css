@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(248, 248, 248);
+}
+div{
+    margin:auto;
+    margin-top: 100px;
+    width : 600px;
+    height: 700px;
+    background:linear-gradient(to top,lightblue,white) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.holder{
+    height: 60px;
+    width: 90%;
+    border: solid;
+    border-width:1px;
+    border-radius: 3px;
+    margin:20px;
+    border : none;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.holder::placeholder{
+    padding-left:10px;
+    font-size: 15px;
+}
+p{
+    font-size: 30px;
+    font-weight: bold;
+    margin:20px 30px;
+}
+button{
+    display:block;
+    height: 60px;
+    width: 200px;
+    padding:10px 25px;
+    font-size: 20px;
+    background-color: blue;
+    font-weight: bold;
+    margin: 20px 50px;
+    border:none;
+    cursor: pointer;
+    border-radius: 4px;
+    color:white;
+    transition: 0.015s;
+}
+button:hover{
+    opacity: 0.7;
+}
+button:active{
+    opacity:0.5;
+}
