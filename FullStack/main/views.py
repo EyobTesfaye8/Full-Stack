@@ -1,26 +1,20 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib import messages
+from . import backends
 from django.views import View
+from django.contrib.auth import authenticate
 # Create your views here.
 
-Sform = SignUpForm()
-Lform = LoginForm()
-users = User.objects.all().order_by('firstName')
-
 def home(request):
-    Sform = SignUpForm()
-    Lform = LoginForm()
     users = User.objects.all().order_by('-firstName')
     context = {
-    "Sform": Sform,
-    'Lform': Lform,
     'contents':users
 }
     return render(request, "main/base.html", context)
 
-def login(request):
-    return render(request, 'main/login_page.html')
+# def login(request):
+#     return render(request, 'main/login_page.html')
 
 def UserHome(request, pk):
     user = User.objects.get(id = pk)
@@ -47,7 +41,7 @@ class SignUp(View):
     
 class Home(View):
     def get(self, request):
-        users = User.objects.all().order_by('-firstName')
+        users = User.objects.all().order_by('firstName')
         context = {
         'users':users
     }
@@ -57,10 +51,13 @@ class Login(View):
     def get(self, request):
         return render(request, 'main/login_page.html')
     def post(self, request):
-        form = LoginForm(request.POST)
-        users = User.objects.all('email', 'password')
-        context = {
-            'users':users
-        }
+        email = request.POST.get('email')
+        password = request.POST.get('password')
         
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            return redirect('UserHome', pk = user.get_user_id())
+        else:
+            messages.error(request, ("fuck NO"))
+            return redirect('login')
         # user authentication here!!!

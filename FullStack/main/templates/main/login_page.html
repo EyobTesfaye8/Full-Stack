@@ -3,13 +3,23 @@
     <link href ="{% static 'login.css' %}" rel="stylesheet">
 </head>
 <body>
+     {% block message %}
+        {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+        {% endif %}
+    {% endblock %}
     <div class="login_box">
-        <p class="login_text">Log in to your account.</p>
-        <p class="intro">Email Address</p>
-        <input class="text_holder" type="text">
-        <p class="intro">Password</p>
-        <input class="text_holder" type="text">
-        <p class="privacy_holder">By clicking "log in," you agree to our Terms of Use and our Privacy Policy.</p>
-        <a href="{% url 'home' %}"> <button class="logInButton">Log in </button> </a>
+            <p class="login_text">Log in to your account.</p>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <p class="intro">Email Address</p>
+            <input class="text_holder" type="email" name="email">
+            <p class="intro">Password</p>
+            <input class="text_holder" type="password" name="password">
+            <p class="privacy_holder">By clicking "log in," you agree to our Terms of Use and our Privacy Policy.</p>
+            <button type="submit" class="logInButton">Log in </button>
+        </form>
     </div>
 </body>
